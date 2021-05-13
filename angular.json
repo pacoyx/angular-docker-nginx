@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "compras"
+  "defaultProject": "compras",
+  "cli": {
+    "analytics": false
+  }
 }
