@@ -1,0 +1,53 @@
+<div class="alert alert-success" role="alert" *ngIf="cargando">
+    <h4 class="alert-heading">loading...</h4>
+    <p>cargando la informacion, por favor espere</p>
+</div>
+
+
+<div class="alert alert-danger" role="alert" *ngIf="error">
+    <h4 class="alert-heading">ERROR</h4>
+    <p>{{error | json}}</p>
+</div>
+
+
+<div class="container mt-5">
+
+    <h1>Facturas de Compras</h1>
+    <hr>
+
+    <div class="row text-center text-primary">
+        <div class="col-1">
+            TIPO
+        </div>
+        <div class="col-2">
+            SERIE
+        </div>
+        <div class="col-2">
+            NUMERO
+        </div>
+        <div class="col-2">
+            TOTAL
+        </div>
+        <div class="col-2">
+            FECHA
+        </div>
+    </div>
+
+    <div class="row" *ngFor="let factura of facturas">
+        <div class="col-1">
+            {{factura.tipo}}
+        </div>
+        <div class="col-2">
+            {{factura.serie}}
+        </div>
+        <div class="col-2">
+            {{factura.numero}}
+        </div>
+        <div class="col-2">
+            {{factura.total | currency}}
+        </div>
+        <div class="col-2">
+            {{factura.fecha | date}}
+        </div>
+    </div>
+</div>
